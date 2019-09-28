@@ -1,10 +1,5 @@
 package ch.tamidosa.eco20;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -15,11 +10,19 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class ScanActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+public class ScanCompareActivity extends AppCompatActivity {
 
     private final int CAMERA_RESULT = 101;
 
     public final int CUSTOMIZED_REQUEST_CODE = 0x0000ffff;
+
+    ArrayList<Integer> comp = new ArrayList<Integer>();
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -29,7 +32,7 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scan);
 
         //Get permission for Camera
-        if(ContextCompat.checkSelfPermission(ScanActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(ScanCompareActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
             StartScanning("already Granted");
         }
         else{
@@ -39,6 +42,10 @@ public class ScanActivity extends AppCompatActivity {
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, CAMERA_RESULT);
             StartScanning("just Granted");
         }
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("scanNr", -1);
+        comp.add(scanNr);
+
     }
 
     private void StartScanning(String text) {
@@ -73,10 +80,10 @@ public class ScanActivity extends AppCompatActivity {
             Log.d("MainActivity", "Scanned");
             Double d = Double.parseDouble(result.getContents());
             int z = d.intValue();
-            //Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, InfoPreviewActivity.class);
-            i.putExtra("scanNr", z);
-            startActivity(i);
+            Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+//            Intent i = new Intent(this, InfoPreviewActivity.class);
+//            i.putExtra("scanNr", z);
+//            startActivity(i);
         }
     }
 

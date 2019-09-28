@@ -1,5 +1,6 @@
 package ch.tamidosa.eco20;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class InfoPreviewActivity extends AppCompatActivity {
 
@@ -38,6 +40,12 @@ public class InfoPreviewActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("scanNr", -1);
+        //use ScanNr to change content
+        Toast.makeText(this, "we got: " + scanNr, Toast.LENGTH_LONG).show();
+
+
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab1 = (FloatingActionButton) findViewById(R.id.fab1);
@@ -56,6 +64,15 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
 
          */
+    }
+    public void onfab1Click(View view){
+        Intent i = new Intent(this, ScanActivity.class);
+        startActivity(i);
+    }
+
+    public void onfab2Click(View view){
+        Intent i = new Intent(this, ScanCompareActivity.class);
+        startActivity(i);
     }
 
     private void showFABMenu(){
