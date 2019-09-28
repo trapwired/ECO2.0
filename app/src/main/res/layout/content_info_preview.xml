@@ -15,7 +15,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/product_preview_img"
@@ -30,7 +30,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello World!" />
+
         </TableRow>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ExpandableListView
+                android:id="@+id/simpleExpandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:childDivider="#0f0"
+                android:divider="#f00"
+                android:dividerHeight="1dp" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
