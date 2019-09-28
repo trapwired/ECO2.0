@@ -146,12 +146,10 @@ public class InfoPreviewActivity extends AppCompatActivity {
     //load some initial data into out list
     private void loadData(){
 
-        addProduct("Weg","ListView");
-        addProduct("Weg","ExpandableListView");
-        addProduct("Weg","GridView");
+        addProduct("Weg","Transport");
 
-        addProduct("Koponente","PolyMorphism");
-        addProduct("Koponente","Collections");
+        addProduct("Koponente","");
+        addProduct("Koponente","");
 
     }
 
