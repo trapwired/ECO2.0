@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,7 +61,7 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
         //expandable stuff
         // add data for displaying in expandable list view
-        loadData();
+        loadData(scanNr);
 
         //get reference of the ExpandableListView
         simpleExpandableListView = (ExpandableListView) findViewById(R.id.simpleExpandableListView);
@@ -80,9 +81,10 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 GroupInfo headerInfo = deptList.get(groupPosition);
                 //get the child info
                 ChildInfo detailInfo = headerInfo.getProductList().get(childPosition);
+
                 //display it or do something with it
-                Toast.makeText(getBaseContext(), " Clicked on :: " + headerInfo.getName()
-                        + "/" + detailInfo.getName(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(), " Clicked on :: " + headerInfo.getName()
+                 //       + "/" + detailInfo.getName(), Toast.LENGTH_LONG).show();
                 return false;
             }
         });
@@ -93,8 +95,8 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 //get the group header
                 GroupInfo headerInfo = deptList.get(groupPosition);
                 //display it or do something with it
-                Toast.makeText(getBaseContext(), " Header is :: " + headerInfo.getName(),
-                        Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(), " Header is :: " + headerInfo.getName(),
+                //        Toast.LENGTH_LONG).show();
 
                 return false;
             }
@@ -103,18 +105,30 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
     private void showFABMenu(){
         isFABOpen=true;
-        FloatingActionButton fab1 = findViewById(R.id.fab1);
-        FloatingActionButton fab2 = findViewById(R.id.fab2);
-        fab1.animate().translationY(-getResources().getDimension(R.dimen.fab1_up));
-        fab2.animate().translationY(-getResources().getDimension(R.dimen.fab2_up));
+        LinearLayout fabLayout1 = (LinearLayout) findViewById(R.id.fabLayout1);
+        LinearLayout fabLayout2 = (LinearLayout) findViewById(R.id.fabLayout2);
+        fabLayout1.setVisibility(View.VISIBLE);
+        fabLayout2.setVisibility(View.VISIBLE);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.animate().rotationBy(180);
+        fabLayout1.animate().translationY(-getResources().getDimension(R.dimen.fab1_up));
+        fabLayout2.animate().translationY(-getResources().getDimension(R.dimen.fab2_up));
+
+        //fabLayout1.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        //fabLayout2.animate().translationY(-getResources().getDimension(R.dimen.standard_100));
+        //fabLayout3.animate().translationY(-getResources().getDimension(R.dimen.standard_145));
     }
 
     private void closeFABMenu(){
         isFABOpen=false;
-        FloatingActionButton fab1 = findViewById(R.id.fab1);
-        FloatingActionButton fab2 = findViewById(R.id.fab2);
-        fab1.animate().translationY(0);
-        fab2.animate().translationY(0);
+        LinearLayout fabLayout1 = (LinearLayout) findViewById(R.id.fabLayout1);
+        LinearLayout fabLayout2 = (LinearLayout) findViewById(R.id.fabLayout2);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.animate().rotationBy(180);
+        fabLayout1.animate().translationY(0);
+        fabLayout2.animate().translationY(0);
+        fabLayout1.setVisibility(View.GONE);
+        fabLayout2.setVisibility(View.GONE);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -155,13 +169,49 @@ public class InfoPreviewActivity extends AppCompatActivity {
     }
 
     //load some initial data into out list
-    private void loadData(){
-
-        addProduct("Weg","Transport");
-
-        addProduct("Koponente","");
-        addProduct("Koponente","");
-
+    private void loadData(int scanNr){
+        //2314
+        //2315
+        //2316
+        switch(scanNr){
+            case 2314:
+                addProduct("Trace","TransportBanana");
+                addProduct("Components","Banana in Store:\t10 EcoScore");
+                addProduct("Components","Transport:\t50 EcoScore");
+                addProduct("Components","Ripe Chamber:\t 40 ES");
+                addProduct("Components","Shipping:\t 250 ES");
+                addProduct("Components","Storage:\t 30 ES");
+                addProduct("Components","Transport:\t 30 ES");
+                addProduct("Components","Storage:\t 10 ES");
+                addProduct("Components","Packaging:\t 10 ES");
+                addProduct("Components","Harvest:\t 15 ES");
+                addProduct("Components","Cultivation:\t 10 ES");
+                break;
+            case 2315:
+                addProduct("Trace","TransportAppleCH");
+                addProduct("Components","Apple in Store:\t 10 ES");
+                addProduct("Components","Transport:\t 60 ES");
+                addProduct("Components","Storage:\t 10 ES");
+                addProduct("Components","Transport:\t 40 ES");
+                addProduct("Components","Packaging:\t 10 ES");
+                addProduct("Components","Storehouse:\t 400 ES");
+                addProduct("Components","Transport:\t 50 ES");
+                addProduct("Components","Harvest:\t 10 ES");
+                addProduct("Components","Cultivation:\t 10 ES");
+                break;
+            case 2316:
+                default:
+                    addProduct("Trace","TransportAppleNZ");
+                    addProduct("Components","Apple in Store:\t 10 ES");
+                    addProduct("Components","Transport:\t 60 ES");
+                    addProduct("Components","Storage:\t 10 ES");
+                    addProduct("Components","Shipping:\t 250 ES");
+                    addProduct("Components","Storehouse:\t 30 ES");
+                    addProduct("Components","Transport:\t 70 ES");
+                    addProduct("Components","Packaging:\t 10 ES");
+                    addProduct("Components","Harvest:\t 10 ES");
+                    addProduct("Components","Cultivation:\t 10 ES");
+        }
     }
 
 
@@ -190,8 +240,10 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
         //create a new child and add that to the group
         ChildInfo detailInfo = new ChildInfo();
-        detailInfo.setSequence(String.valueOf(listSize));
+        //detailInfo.setSequence(String.valueOf(listSize));
         detailInfo.setName(product);
+        if(department == "Trace"){ detailInfo.setSource(product); }
+        else{detailInfo.setSource((""));}
         productList.add(detailInfo);
         headerInfo.setProductList(productList);
 

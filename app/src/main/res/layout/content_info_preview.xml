@@ -42,8 +42,8 @@
                 android:id="@+id/simpleExpandableListView"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:childDivider="#0f0"
-                android:divider="#f00"
+                android:childDivider="#4CAF50"
+                android:divider="#009688"
                 android:dividerHeight="1dp" />
 
         </RelativeLayout>

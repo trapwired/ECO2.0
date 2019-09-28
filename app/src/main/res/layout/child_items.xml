@@ -19,4 +19,12 @@
         android:layout_toRightOf="@id/sequence"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <ImageView
+        android:id="@+id/map_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="left"
+        android:contentDescription="@string/img_product"
+        android:src="@drawable/bananen"
+        android:visibility="visible" />
 </RelativeLayout>

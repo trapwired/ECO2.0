@@ -6,4 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".DirectComparison">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="335dp">
+
+        <ImageView
+            android:id="@+id/image_1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="start"
+            android:contentDescription="@string/img_product"
+            android:src="@drawable/aepfel_gold_kiss"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/image_2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="start"
+            android:contentDescription="@string/img_product"
+            android:src="@drawable/aepfel_gala_victor"
+            android:visibility="visible" />
+        <ImageView
+            android:id="@+id/image_3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="start"
+            android:contentDescription="@string/img_product"
+            android:src="@drawable/bananen"
+            android:visibility="visible" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

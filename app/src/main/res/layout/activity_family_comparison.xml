@@ -6,4 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".FamilyComparison">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="320dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_gala_victor"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_gold_kiss"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_boskoop"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_braeburn"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_golden"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_gravensteiner"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_jazz"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_8"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_kanzi"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_9"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_pink_lady"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/aepfel_sweetango"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/image_11"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/img_product"
+                android:src="@drawable/bio_aepfel_gala"
+                android:visibility="visible" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

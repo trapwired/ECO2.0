@@ -1,10 +1,12 @@
 package ch.tamidosa.eco20;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -44,10 +46,28 @@ public class CustomAdapter extends BaseExpandableListAdapter {
             view = infalInflater.inflate(R.layout.child_items, null);
         }
 
-        TextView sequence = (TextView) view.findViewById(R.id.sequence);
-        sequence.setText(detailInfo.getSequence().trim() + ". ");
-        TextView childItem = (TextView) view.findViewById(R.id.childItem);
-        childItem.setText(detailInfo.getName().trim());
+        String imgname = detailInfo.getSource();
+        //TextView sequence = (TextView) view.findViewById(R.id.sequence);
+        ImageView map = (ImageView) view.findViewById(R.id.map_image);
+        if(imgname != ""){
+            map.setVisibility(View.VISIBLE);
+            switch(imgname) {
+                case "TransportBanana":
+                    map.setImageResource(R.drawable.world_map_banane);
+                    break;
+                case "TransportAppleCH":
+                    map.setImageResource(R.drawable.world_map);
+                    break;
+                case "TransportAppleNZ":
+                    map.setImageResource(R.drawable.world_map_nz);
+                    break;
+            }
+        }else {
+            map.setVisibility(View.GONE);
+            //sequence.setText(detailInfo.getSequence().trim() + ". ");
+            TextView childItem = (TextView) view.findViewById(R.id.childItem);
+            childItem.setText(detailInfo.getName().trim());
+        }
 
         return view;
     }
@@ -100,5 +120,7 @@ public class CustomAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
+
+
 
 }
