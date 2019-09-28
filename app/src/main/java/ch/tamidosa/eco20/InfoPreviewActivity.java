@@ -103,6 +103,16 @@ public class InfoPreviewActivity extends AppCompatActivity {
         });
     }
 
+    public void onfab1Click(View view){
+        Intent i = new Intent(this, ScanActivity.class);
+        startActivity(i);
+    }
+
+    public void onfab2Click(View view){
+        Intent i = new Intent(this, ScanCompareActivity.class);
+        startActivity(i);
+    }
+
     private void showFABMenu(){
         isFABOpen=true;
         LinearLayout fabLayout1 = (LinearLayout) findViewById(R.id.fabLayout1);

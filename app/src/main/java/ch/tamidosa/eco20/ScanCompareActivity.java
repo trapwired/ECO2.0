@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.ArrayList;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -20,6 +22,8 @@ public class ScanCompareActivity extends AppCompatActivity {
 
     public final int CUSTOMIZED_REQUEST_CODE = 0x0000ffff;
 
+    ArrayList<Integer> comp = new ArrayList<Integer>();
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -29,7 +33,7 @@ public class ScanCompareActivity extends AppCompatActivity {
 
         //Get permission for Camera
         if(ContextCompat.checkSelfPermission(ScanCompareActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
-            //StartScanning("already Granted");
+            StartScanning("already Granted");
         }
         else{
             if(shouldShowRequestPermissionRationale(android.Manifest.permission.CAMERA)){
@@ -38,6 +42,10 @@ public class ScanCompareActivity extends AppCompatActivity {
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, CAMERA_RESULT);
             StartScanning("just Granted");
         }
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("scanNr", -1);
+        comp.add(scanNr);
+
     }
 
     private void StartScanning(String text) {
@@ -70,10 +78,12 @@ public class ScanCompareActivity extends AppCompatActivity {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
         } else {
             Log.d("MainActivity", "Scanned");
-            int scanres = Integer.parseInt(result.getContents());
-            Intent intent = new Intent(this, InfoPreviewActivity.class);
-            intent.putExtra("ScanNr", scanres);
-            startActivity(intent);
+            Double d = Double.parseDouble(result.getContents());
+            int z = d.intValue();
+            Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+//            Intent i = new Intent(this, InfoPreviewActivity.class);
+//            i.putExtra("scanNr", z);
+//            startActivity(i);
         }
     }
 
