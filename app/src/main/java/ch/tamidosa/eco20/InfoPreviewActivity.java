@@ -14,7 +14,8 @@ import android.view.MenuItem;
 
 public class InfoPreviewActivity extends AppCompatActivity {
 
-    //Main Activity
+    //Bool for FLAB pressed?
+    private boolean isFABOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +25,54 @@ public class InfoPreviewActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(!isFABOpen){
+                    showFABMenu();
+                }else{
+                    closeFABMenu();
+                }
             }
         });
+
+        /*
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+    fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+    fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+    fab.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if(!isFABOpen){
+                showFABMenu();
+            }else{
+                closeFABMenu();
+            }
+        }
+    });
+
+
+         */
     }
 
+    private void showFABMenu(){
+        isFABOpen=true;
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab1.animate().translationY(-getResources().getDimension(R.dimen.fab1_up));
+        fab2.animate().translationY(-getResources().getDimension(R.dimen.fab2_up));
+    }
+
+    private void closeFABMenu(){
+        isFABOpen=false;
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab1.animate().translationY(0);
+        fab2.animate().translationY(0);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
