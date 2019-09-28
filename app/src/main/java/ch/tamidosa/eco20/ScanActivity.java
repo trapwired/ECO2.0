@@ -42,7 +42,7 @@ public class ScanActivity extends AppCompatActivity {
     }
 
     private void StartScanning(String text) {
-        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
         new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
     }
 
@@ -71,13 +71,15 @@ public class ScanActivity extends AppCompatActivity {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
         } else {
             Log.d("MainActivity", "Scanned");
-            Double d = Double.parseDouble(result.getContents());
-            int z = d.intValue();
-            //Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, InfoPreviewActivity.class);
-            i.putExtra("scanNr", z);
-            startActivity(i);
+            Intent intent = new Intent(this, InfoPreviewActivity.class);
+            String scan = result.getContents();
+            Double d = Double.parseDouble(scan);
+            if(d < Integer.MAX_VALUE)
+            intent.putExtra("ScanNr", d.intValue());
+            startActivity(intent);
+            }
+
         }
     }
 
-}
+

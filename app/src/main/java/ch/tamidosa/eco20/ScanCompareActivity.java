@@ -37,7 +37,7 @@ public class ScanCompareActivity extends AppCompatActivity {
         }
         else{
             if(shouldShowRequestPermissionRationale(android.Manifest.permission.CAMERA)){
-                Toast.makeText(getApplicationContext(), "Permission Needed.", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "Permission Needed.", Toast.LENGTH_LONG).show();
             }
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, CAMERA_RESULT);
             StartScanning("just Granted");
@@ -49,7 +49,7 @@ public class ScanCompareActivity extends AppCompatActivity {
     }
 
     private void StartScanning(String text) {
-        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
         new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
     }
 
