@@ -1,10 +1,5 @@
 package ch.tamidosa.eco20;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -15,7 +10,11 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class ScanActivity extends AppCompatActivity {
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+public class ScanCompareActivity extends AppCompatActivity {
 
     private final int CAMERA_RESULT = 101;
 
@@ -29,7 +28,7 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scan);
 
         //Get permission for Camera
-        if(ContextCompat.checkSelfPermission(ScanActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(ScanCompareActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
             //StartScanning("already Granted");
         }
         else{
@@ -71,12 +70,10 @@ public class ScanActivity extends AppCompatActivity {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
         } else {
             Log.d("MainActivity", "Scanned");
-            Intent intent = new Intent(this, InfoPreviewActivity.class);
             int scanres = Integer.parseInt(result.getContents());
+            Intent intent = new Intent(this, InfoPreviewActivity.class);
             intent.putExtra("ScanNr", scanres);
             startActivity(intent);
-            }
-
         }
     }
 

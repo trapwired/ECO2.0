@@ -1,5 +1,6 @@
 package ch.tamidosa.eco20;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,24 +39,11 @@ public class InfoPreviewActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-    fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-    fab3 = (FloatingActionButton) findViewById(R.id.fab3);
-    fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            if(!isFABOpen){
-                showFABMenu();
-            }else{
-                closeFABMenu();
-            }
-        }
-    });
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("ScanNr", 0);
+        //adapt all info depending on scanNr
+        
 
-
-         */
     }
 
     private void showFABMenu(){
@@ -93,5 +81,10 @@ public class InfoPreviewActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onScanFabPressed(View view){
+        Intent intent = new Intent(this, ScanActivity.class);
+        startActivity(intent);
     }
 }
