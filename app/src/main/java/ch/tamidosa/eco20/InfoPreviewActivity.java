@@ -1,5 +1,6 @@
 package ch.tamidosa.eco20;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,10 +8,15 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -46,6 +52,11 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("ScanNr", 0);
+        //adapt all info depending on scanNr
+
 
         //expandable stuff
         // add data for displaying in expandable list view
@@ -187,5 +198,9 @@ public class InfoPreviewActivity extends AppCompatActivity {
         //find the group position inside the list
         groupPosition = deptList.indexOf(headerInfo);
         return groupPosition;
+    }
+public void onScanFabPressed(View view){
+        Intent intent = new Intent(this, ScanActivity.class);
+        startActivity(intent);
     }
 }
