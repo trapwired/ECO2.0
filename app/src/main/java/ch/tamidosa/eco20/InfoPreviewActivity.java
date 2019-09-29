@@ -34,6 +34,8 @@ public class InfoPreviewActivity extends AppCompatActivity {
     private CustomAdapter listAdapter;
     private ExpandableListView simpleExpandableListView;
 
+    private int SN;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,13 +59,13 @@ public class InfoPreviewActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        int scanNr = intent.getIntExtra("ScanNr", 0);
+        SN = intent.getIntExtra("ScanNr1", 0);
         //adapt all info depending on scanNr
 
 
         //expandable stuff
         // add data for displaying in expandable list view
-        loadData(scanNr);
+        loadData(SN);
 
         //get reference of the ExpandableListView
         simpleExpandableListView = (ExpandableListView) findViewById(R.id.simpleExpandableListView);
@@ -107,13 +109,14 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
     public void onfab1Click(View view){
         Intent i = new Intent(this, ScanActivity.class);
-        i.putExtra("comp", true);
+        i.putExtra("scanNr", SN);
+        i.putExtra("compar", true);
         startActivity(i);
     }
 
     public void onfab2Click(View view){
         Intent i = new Intent(this, ScanActivity.class);
-        i.putExtra("comp", false);
+
         startActivity(i);
     }
 
