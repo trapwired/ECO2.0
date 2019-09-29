@@ -14,30 +14,30 @@
         tools:layout_editor_absoluteY="335dp">
 
         <ImageView
-            android:id="@+id/image_1"
+            android:id="@+id/image_1c"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/aepfel_gold_kiss"
-            android:visibility="visible" />
+            android:visibility="invisible"/>
 
         <ImageView
-            android:id="@+id/image_2"
+            android:id="@+id/image_2c"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/aepfel_gala_victor"
-            android:visibility="visible" />
+            android:visibility="invisible" />
         <ImageView
-            android:id="@+id/image_3"
+            android:id="@+id/image_3c"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/bananen"
-            android:visibility="visible" />
+            android:visibility="invisible" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

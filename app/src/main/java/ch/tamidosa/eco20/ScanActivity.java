@@ -27,11 +27,18 @@ public class ScanActivity extends AppCompatActivity {
 
     private boolean compar = false;
 
+    private int SN;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
+        Intent intent = getIntent();
+        compar = intent.getBooleanExtra("compar", false);
+        int scanNr = intent.getIntExtra("scanNr", -1);
+        // Toast.makeText(getBaseContext(), "Got:" + scanNr, Toast.LENGTH_LONG).show();
+        SN = scanNr;
 
         //Get permission for Camera
         if(ContextCompat.checkSelfPermission(ScanActivity.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
@@ -45,13 +52,8 @@ public class ScanActivity extends AppCompatActivity {
             StartScanning("just Granted");
         }
 
-        Intent intent = getIntent();
-        int scanNr = intent.getIntExtra("scanNr", -1);
-        compar = intent.getBooleanExtra("comp", false);
-        if(compar){
-            //it is a comparison, track the products
-            comp.add(scanNr);
-        }
+
+
 
     }
 
@@ -96,7 +98,8 @@ public class ScanActivity extends AppCompatActivity {
             String scan = result.getContents();
             Double d = Double.parseDouble(scan);
             if(d < Integer.MAX_VALUE)
-            intent.putExtra("ScanNr", d.intValue());
+            intent.putExtra("ScanNr1", d.intValue());
+            intent.putExtra("ScanNr2", SN);
             startActivity(intent);
             }
 
