@@ -105,11 +105,13 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
     public void onfab1Click(View view){
         Intent i = new Intent(this, ScanActivity.class);
+        i.putExtra("comp", true);
         startActivity(i);
     }
 
     public void onfab2Click(View view){
-        Intent i = new Intent(this, ScanCompareActivity.class);
+        Intent i = new Intent(this, ScanActivity.class);
+        i.putExtra("comp", false);
         startActivity(i);
     }
 
@@ -261,8 +263,5 @@ public class InfoPreviewActivity extends AppCompatActivity {
         groupPosition = deptList.indexOf(headerInfo);
         return groupPosition;
     }
-public void onScanFabPressed(View view){
-        Intent intent = new Intent(this, ScanActivity.class);
-        startActivity(intent);
-    }
+
 }

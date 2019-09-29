@@ -15,12 +15,17 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.ArrayList;
+
 public class ScanActivity extends AppCompatActivity {
 
     private final int CAMERA_RESULT = 101;
 
     public final int CUSTOMIZED_REQUEST_CODE = 0x0000ffff;
 
+    ArrayList<Integer> comp = new ArrayList<Integer>();
+
+    private boolean compar = false;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -39,6 +44,15 @@ public class ScanActivity extends AppCompatActivity {
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, CAMERA_RESULT);
             StartScanning("just Granted");
         }
+
+        Intent intent = getIntent();
+        int scanNr = intent.getIntExtra("scanNr", -1);
+        compar = intent.getBooleanExtra("comp", false);
+        if(compar){
+            //it is a comparison, track the products
+            comp.add(scanNr);
+        }
+
     }
 
     private void StartScanning(String text) {
@@ -71,7 +85,14 @@ public class ScanActivity extends AppCompatActivity {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
         } else {
             Log.d("MainActivity", "Scanned");
-            Intent intent = new Intent(this, InfoPreviewActivity.class);
+
+            Intent intent;
+            if(compar){
+                intent = new Intent(this, DirectComparison.class);
+            } else {
+                intent = new Intent(this, InfoPreviewActivity.class);
+            }
+
             String scan = result.getContents();
             Double d = Double.parseDouble(scan);
             if(d < Integer.MAX_VALUE)

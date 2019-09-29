@@ -42,6 +42,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
 
+            android:onClick="onfab2Click"
             app:srcCompat="@android:drawable/ic_menu_camera" />
     </LinearLayout>
 
@@ -67,7 +68,7 @@
             android:layout_margin="@dimen/fab_margin"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="onScanFabPressed"
+            android:onClick="onfab1Click"
             app:srcCompat="@android:drawable/ic_menu_search" />
     </LinearLayout>
 

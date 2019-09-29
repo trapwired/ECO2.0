@@ -81,9 +81,10 @@ public class ScanCompareActivity extends AppCompatActivity {
             Double d = Double.parseDouble(result.getContents());
             int z = d.intValue();
             Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-//            Intent i = new Intent(this, InfoPreviewActivity.class);
-//            i.putExtra("scanNr", z);
-//            startActivity(i);
+            Intent i = new Intent(this, DirectComparison.class);
+            Log.d("why", "are in ScanCompare");
+            i.putExtra("scanNr", z);
+            startActivity(i);
         }
     }
 
