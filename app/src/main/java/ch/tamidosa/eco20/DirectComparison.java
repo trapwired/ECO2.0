@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class DirectComparison extends AppCompatActivity {
+    public int SN = 2314;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class DirectComparison extends AppCompatActivity {
 
         Intent intent = getIntent();
         int scanNr1 = intent.getIntExtra("ScanNr1", -1);
+        SN = scanNr1;
         int scanNr2 = intent.getIntExtra("ScanNr2", -1);
         // Toast.makeText(getBaseContext(),"we got 1and2:" + scanNr1 + " " + scanNr2, Toast.LENGTH_LONG).show();
             switch (scanNr1){
@@ -100,8 +102,14 @@ public class DirectComparison extends AppCompatActivity {
 
     private void onClickI(int i){
         Intent inte = new Intent(this, InfoPreviewActivity.class);
-        inte.putExtra("ScanNr", i);
+        inte.putExtra("ScanNr1", i);
         startActivity(inte);
+    }
 
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, InfoPreviewActivity.class);
+        i.putExtra("ScanNr1", SN);
+        startActivity(i);
     }
 }

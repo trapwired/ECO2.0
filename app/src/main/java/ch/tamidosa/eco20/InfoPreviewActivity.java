@@ -172,7 +172,7 @@ public class InfoPreviewActivity extends AppCompatActivity {
         }
     }
 
-    //load some initial data into out list
+    //load some initial data into out lists
     private void loadData(int scanNr){
         //2314
         //2315
@@ -192,10 +192,11 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 addProduct("Components","Packaging:\t0.2 E/kg");
                 addProduct("Components","Harvest:\t0.1 E/kg");
                 addProduct("Components","Cultivation:\t0.1 E/kg");
+                addProduct("", "");
                 ImageView prImage = (ImageView)findViewById(R.id.prodfarm);
                 prImage.setVisibility(View.INVISIBLE);
                 break;
-            case 2315:
+            case 2316:
                 setHeader("Gala Apple CH","4.90CHF/kg","4.9");
                 addProduct("Score", "4.9 fully grown beeches need one day to compensate the CO2 emissions of 1 kg local grown Gala Apple's.\nThis number can deviate strongly depending on the season");
                 addProduct("Trace","TransportAppleCH");
@@ -208,8 +209,9 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 addProduct("Components","Transport:\t 1.6 E/kg");
                 addProduct("Components","Harvest:\t 0.2 E/kg");
                 addProduct("Components","Cultivation:\t 0.1 E/kg");
+                addProduct("", "");
                 break;
-            case 2316:
+            case 2315:
                 default:
                     setHeader("Dazzle Apple NZ","4.10CHF/kg","29.2");
                     addProduct("Score", "29.2 fully grown beeches need one day to compensate the CO2 emissions of 1kg imported Dazzle Apples from New Zealand");
@@ -223,6 +225,7 @@ public class InfoPreviewActivity extends AppCompatActivity {
                     addProduct("Components","Packaging:\t 0.2 E/kg");
                     addProduct("Components","Harvest:\t 0.2 E/kg");
                     addProduct("Components","Cultivation:\t 0.1 E/kg");
+                    addProduct("", "");
         }
     }
 
@@ -269,7 +272,6 @@ public class InfoPreviewActivity extends AppCompatActivity {
 
         //create a new child and add that to the group
         ChildInfo detailInfo = new ChildInfo();
-        //detailInfo.setSequence(String.valueOf(listSize));
         detailInfo.setName(product);
         if(department == "Trace"){ detailInfo.setSource(product); }
         else{detailInfo.setSource((""));}

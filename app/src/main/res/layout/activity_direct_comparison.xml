@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/image_1c"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/aepfel_gold_kiss"
@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/image_2c"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/aepfel_gala_victor"
@@ -33,7 +33,7 @@
         <ImageView
             android:id="@+id/image_3c"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_gravity="start"
             android:contentDescription="@string/img_product"
             android:src="@drawable/bananen"
