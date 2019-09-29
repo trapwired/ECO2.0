@@ -189,48 +189,48 @@ public class InfoPreviewActivity extends AppCompatActivity {
         //2316
         switch(scanNr){ //EcoScore rechnungen stimmen!!!
             case 2314:
-                setHeader("Chiquita Banana","2.90CHF/kg","455 EcoScore");
-                addProduct("Score", "blablablablablablablablabla\nblablablablabla");
+                setHeader("Chiquita Banana","2.90CHF/kg","18.7");
+                addProduct("Score", "18.7 fully grown beeches need one day to compensate the CO2 emissions of 1 kg Chiquita Banana's from Colombia");
                 addProduct("Trace","TransportBanana");
-                addProduct("Components","Banana in Store:\t10 ES");
-                addProduct("Components","Transport:\t50 ES");
-                addProduct("Components","Ripe Chamber:\t 40 ES");
-                addProduct("Components","Shipping:\t 250 ES");
-                addProduct("Components","Storage:\t 30 ES");
-                addProduct("Components","Transport:\t 30 ES");
-                addProduct("Components","Storage:\t 10 ES");
-                addProduct("Components","Packaging:\t 10 ES");
-                addProduct("Components","Harvest:\t 15 ES");
-                addProduct("Components","Cultivation:\t 10 ES");
+                addProduct("Components","Banana in Store:\t0.1 E/kg");
+                addProduct("Components","Transport:\t2.8 E/kg");
+                addProduct("Components","Ripe Chamber:\t3.2 E/kg");
+                addProduct("Components","Shipping:\t8.9 E/kg");
+                addProduct("Components","Storage:\t1.1 E/kg");
+                addProduct("Components","Transport:\t1.9 E/kg");
+                addProduct("Components","Storage:\t0.3 E/kg");
+                addProduct("Components","Packaging:\t0.2 E/kg");
+                addProduct("Components","Harvest:\t0.1 E/kg");
+                addProduct("Components","Cultivation:\t0.1 E/kg");
                 break;
             case 2315:
-                setHeader("Gala Apfel CH","4.90CHF/kg","600 EcoScore");
-                addProduct("Score", "blablablablablablablablabla\nblablablablabla");
+                setHeader("Gala Apple CH","4.90CHF/kg","4.9");
+                addProduct("Score", "4.9 fully grown beeches need one day to compensate the CO2 emissions of 1 kg local grown Gala Apple's.\nThis number can deviate strongly depending on the season");
                 addProduct("Trace","TransportAppleCH");
-                addProduct("Components","Apple in Store:\t 10 ES");
-                addProduct("Components","Transport:\t 60 ES");
-                addProduct("Components","Storage:\t 10 ES");
-                addProduct("Components","Transport:\t 40 ES");
-                addProduct("Components","Packaging:\t 10 ES");
-                addProduct("Components","Storehouse:\t 400 ES");
-                addProduct("Components","Transport:\t 50 ES");
-                addProduct("Components","Harvest:\t 10 ES");
-                addProduct("Components","Cultivation:\t 10 ES");
+                addProduct("Components","Apple in Store:\t 0.1 E/kg");
+                addProduct("Components","Transport:\t 1.2 E/kg");
+                addProduct("Components","Storage:\t 0.2 E/kg");
+                addProduct("Components","Transport:\t 1.0 E/kg");
+                addProduct("Components","Packaging:\t 0.2 E/kg");
+                addProduct("Components","Storehouse:\t 0.3 E/kg");
+                addProduct("Components","Transport:\t 1.6 E/kg");
+                addProduct("Components","Harvest:\t 0.2 E/kg");
+                addProduct("Components","Cultivation:\t 0.1 E/kg");
                 break;
             case 2316:
                 default:
-                    setHeader("Dazzle Apfel NZ","4.10CHF/kg","460 EcoScore");
-                    addProduct("Score", "blablablablablablablablabla\nblablablablabla");
+                    setHeader("Dazzle Apple NZ","4.10CHF/kg","29.2");
+                    addProduct("Score", "29.2 fully grown beeches need one day to compensate the CO2 emissions of 1kg imported Dazzle Apples from New Zealand");
                     addProduct("Trace","TransportAppleNZ");
-                    addProduct("Components","Apple in Store:\t 10 ES");
-                    addProduct("Components","Transport:\t 60 ES");
-                    addProduct("Components","Storage:\t 10 ES");
-                    addProduct("Components","Shipping:\t 250 ES");
-                    addProduct("Components","Storehouse:\t 30 ES");
-                    addProduct("Components","Transport:\t 70 ES");
-                    addProduct("Components","Packaging:\t 10 ES");
-                    addProduct("Components","Harvest:\t 10 ES");
-                    addProduct("Components","Cultivation:\t 10 ES");
+                    addProduct("Components","Apple in Store:\t 0.1 E/kg");
+                    addProduct("Components","Transport:\t 2.9 E/kg");
+                    addProduct("Components","Storage:\t 1.4 E/kg");
+                    addProduct("Components","Shipping:\t 18.9 E/kg");
+                    addProduct("Components","Storehouse:\t 1.9 E/kg");
+                    addProduct("Components","Transport:\t 3.6 E/kg");
+                    addProduct("Components","Packaging:\t 0.2 E/kg");
+                    addProduct("Components","Harvest:\t 0.2 E/kg");
+                    addProduct("Components","Cultivation:\t 0.1 E/kg");
         }
     }
 
