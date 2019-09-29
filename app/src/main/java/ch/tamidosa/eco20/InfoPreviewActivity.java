@@ -192,6 +192,8 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 addProduct("Components","Packaging:\t0.2 E/kg");
                 addProduct("Components","Harvest:\t0.1 E/kg");
                 addProduct("Components","Cultivation:\t0.1 E/kg");
+                ImageView prImage = (ImageView)findViewById(R.id.prodfarm);
+                prImage.setVisibility(View.INVISIBLE);
                 break;
             case 2315:
                 setHeader("Gala Apple CH","4.90CHF/kg","4.9");
@@ -277,6 +279,11 @@ public class InfoPreviewActivity extends AppCompatActivity {
         //find the group position inside the list
         groupPosition = deptList.indexOf(headerInfo);
         return groupPosition;
+    }
+
+    public void onClickFam(View view){
+        Intent i = new Intent(this, FamilyComparison.class);
+        startActivity(i);
     }
 
 }

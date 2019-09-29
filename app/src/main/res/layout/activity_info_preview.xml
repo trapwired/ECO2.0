@@ -81,17 +81,21 @@
         android:layout_margin="@dimen/fab_margin"
         android:elevation="6dp"
         app:srcCompat="@android:drawable/arrow_up_float" />
+
     <ImageButton
+        android:id="@+id/prodfarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginLeft="-40dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/zxing_transparent"
+        android:contentDescription="Hello"
         android:elevation="6dp"
+        android:onClick="onClickFam"
         android:scaleX="0.6"
         android:scaleY="0.6"
-        android:layout_gravity="start|bottom"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="4dp"
-        android:src="@drawable/icon_search"
-        android:contentDescription="Hello" />
+        android:src="@drawable/prodfam" />
 
     <include layout="@layout/content_info_preview" />
 

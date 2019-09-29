@@ -23,7 +23,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_gala_victor"
+                android:src="@drawable/p1"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_2"
@@ -31,7 +31,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_gold_kiss"
+                android:src="@drawable/p2"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_3"
@@ -39,7 +39,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_boskoop"
+                android:src="@drawable/p3"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_4"
@@ -47,7 +47,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_braeburn"
+                android:src="@drawable/p4"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_5"
@@ -55,7 +55,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_golden"
+                android:src="@drawable/p5"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_6"
@@ -63,7 +63,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_gravensteiner"
+                android:src="@drawable/p11"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_7"
@@ -71,7 +71,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_jazz"
+                android:src="@drawable/p6"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_8"
@@ -79,7 +79,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_kanzi"
+                android:src="@drawable/p10"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_9"
@@ -87,7 +87,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_pink_lady"
+                android:src="@drawable/p7"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_10"
@@ -95,7 +95,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/aepfel_sweetango"
+                android:src="@drawable/p8"
                 android:visibility="visible" />
             <ImageView
                 android:id="@+id/image_11"
@@ -103,7 +103,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:contentDescription="@string/img_product"
-                android:src="@drawable/bio_aepfel_gala"
+                android:src="@drawable/p9"
                 android:visibility="visible" />
 
 
