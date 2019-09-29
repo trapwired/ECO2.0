@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -183,11 +185,13 @@ public class InfoPreviewActivity extends AppCompatActivity {
         //2314
         //2315
         //2316
-        switch(scanNr){
+        switch(scanNr){ //EcoScore rechnungen stimmen!!!
             case 2314:
+                setHeader("Chiquita Banana","2.90CHF/kg","455 EcoScore");
+                addProduct("Score", "blablablablablablablablabla\nblablablablabla");
                 addProduct("Trace","TransportBanana");
-                addProduct("Components","Banana in Store:\t10 EcoScore");
-                addProduct("Components","Transport:\t50 EcoScore");
+                addProduct("Components","Banana in Store:\t10 ES");
+                addProduct("Components","Transport:\t50 ES");
                 addProduct("Components","Ripe Chamber:\t 40 ES");
                 addProduct("Components","Shipping:\t 250 ES");
                 addProduct("Components","Storage:\t 30 ES");
@@ -198,6 +202,8 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 addProduct("Components","Cultivation:\t 10 ES");
                 break;
             case 2315:
+                setHeader("Gala Apfel CH","4.90CHF/kg","600 EcoScore");
+                addProduct("Score", "blablablablablablablablabla\nblablablablabla");
                 addProduct("Trace","TransportAppleCH");
                 addProduct("Components","Apple in Store:\t 10 ES");
                 addProduct("Components","Transport:\t 60 ES");
@@ -211,6 +217,8 @@ public class InfoPreviewActivity extends AppCompatActivity {
                 break;
             case 2316:
                 default:
+                    setHeader("Dazzle Apfel NZ","4.10CHF/kg","460 EcoScore");
+                    addProduct("Score", "blablablablablablablablabla\nblablablablabla");
                     addProduct("Trace","TransportAppleNZ");
                     addProduct("Components","Apple in Store:\t 10 ES");
                     addProduct("Components","Transport:\t 60 ES");
@@ -224,7 +232,24 @@ public class InfoPreviewActivity extends AppCompatActivity {
         }
     }
 
+    private void setHeader(String name, String price, String score){
 
+        TextView prPrice = (TextView)findViewById(R.id.product_price);
+        TextView prName = (TextView)findViewById(R.id.product_name);
+        TextView prScore = (TextView)findViewById(R.id.product_score);
+        ImageView prImage = (ImageView)findViewById(R.id.product_preview_img);
+        prPrice.setText(price);
+        prName.setText(name);
+        prScore.setText(score);
+        if(name.equals("Chiquita Banana")){
+            prImage.setImageResource(R.drawable.bananen);
+        }else if(name.equals("Gala Apfel CH")){
+            prImage.setImageResource(R.drawable.aepfel_gold_kiss);
+        }else{
+            prImage.setImageResource(R.drawable.aepfel_sweetango);
+        }
+
+    }
 
     //here we maintain our products in various departments
     private int addProduct(String department, String product){
