@@ -19,8 +19,9 @@
 
             <ImageView
                 android:id="@+id/product_preview_img"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="180dp"
+                android:layout_height="150dp"
                 android:layout_gravity="left"
                 android:contentDescription="@string/img_product"
                 android:src="@drawable/bananen" />
@@ -33,19 +34,45 @@
                     android:id="@+id/product_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
                     android:text="Hello World!" />
                 <TextView
                     android:id="@+id/product_price"
+                    android:layout_gravity="bottom"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hello World!" />
                 <TextView
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
                     android:id="@+id/product_score"
+                    android:layout_gravity="bottom|end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="45dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hello World!" />
-
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="-10dp"
+                    android:src="@drawable/ecos"/>
+                </LinearLayout>
             </LinearLayout>
+
         </TableRow>
 
         <RelativeLayout
@@ -57,8 +84,8 @@
                 android:id="@+id/simpleExpandableListView"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:childDivider="#4CAF50"
-                android:divider="#009688"
+                android:childDivider="#0E2906"
+                android:divider="#D69E06"
                 android:dividerHeight="1dp" />
 
         </RelativeLayout>
